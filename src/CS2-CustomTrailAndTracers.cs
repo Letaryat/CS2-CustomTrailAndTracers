@@ -14,12 +14,16 @@ public class CS2_CustomTrailAndTracers : BasePlugin
     public readonly string[] projectiles = ["hegrenade_projectile", "flashbang_projectile", "smokegrenade_projectile", "decoy_projectile", "molotov_projectile"];
 
     public readonly string[] modelParticles = [
-        "particles/letaryat_trails/grenadeTrail.vpcf",
-        "particles/letaryat_trails/grenadeTrailBrokenColors.vpcf",
-        "particles/letaryat_trails/grenadeLaserSoftTrail.vpcf",
-        "particles/letaryat_trails/grenadeCrackTrail.vpcf",
-        "particles/letaryat_trails/grenadeelectric.vpcf",
-        "particles/letaryat_trails/grenadewater.vpcf",
+        "particles/letaryat_proper/grenadetrail_black.vpcf", //0
+        "particles/letaryat_proper/grenadetrail_red.vpcf",
+        "particles/letaryat_proper/grenadetrail_green.vpcf",
+        "particles/letaryat_proper/grenadetrail_blue.vpcf",
+        "particles/letaryat_proper/grenadetrail_violet.vpcf",
+        "particles/letaryat_proper/grenadecracktrail_black.vpcf", // 5
+        "particles/letaryat_proper/grenadecracktrail_red.vpcf",
+        "particles/letaryat_proper/grenadecracktrail_green.vpcf",
+        "particles/letaryat_proper/grenadecracktrail_blue.vpcf",
+        "particles/letaryat_proper/grenadecracktrail_violet.vpcf",
     ];
 
     public readonly string[] tracerParticles = [

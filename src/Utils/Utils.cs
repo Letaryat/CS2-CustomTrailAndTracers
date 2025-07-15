@@ -82,8 +82,8 @@ namespace CS2_CustomTrailAndTracers.Utils
             particle.EffectName = _plugin.modelParticles[_plugin.modelToUse];
             particle.Teleport(start, QAngle.Zero, Vector.Zero);
 
-            particle.TintCP = 1;
-            particle.Tint = _plugin.TrailColor;
+            //particle.TintCP = 1;
+            //particle.Tint = _plugin.TrailColor;
             particle.StartActive = true;
             particle.DispatchSpawn();
 
