@@ -9,17 +9,13 @@ public class CS2_CustomTrailAndTracers : BasePlugin
 {
     public override string ModuleName => "CS2-CustomTrailAndTracers Colored";
 
-    public override string ModuleVersion => "0.0.3";
+    public override string ModuleVersion => "0.0.4";
     public override string ModuleAuthor => "Letaryat | https://github.com/Letaryat";
     public readonly string[] projectiles = ["hegrenade_projectile", "flashbang_projectile", "smokegrenade_projectile", "decoy_projectile", "molotov_projectile"];
 
     public readonly string[] modelParticles = [
-        "particles/letaryat_trails/grenadeTrail.vpcf",
-        "particles/letaryat_trails/grenadeTrailBrokenColors.vpcf",
-        "particles/letaryat_trails/grenadeLaserSoftTrail.vpcf",
-        "particles/letaryat_trails/grenadeCrackTrail.vpcf",
-        "particles/letaryat_trails/grenadeelectric.vpcf",
-        "particles/letaryat_trails/grenadewater.vpcf",
+        "particles/letaryat_test/trail_yipeee.vpcf",
+        "particles/letaryat_test/trail_yipeee_multiple.vpcf",
     ];
 
     public readonly string[] tracerParticles = [
@@ -28,7 +24,6 @@ public class CS2_CustomTrailAndTracers : BasePlugin
         "particles/letaryat_tracers/bullet_tracer_crack.vpcf", 
         "particles/letaryat_tracers/bullet_tracer_electric.vpcf", 
         "particles/letaryat_tracers/bullet_tracer_water.vpcf", 
-        "particles/letaryat_tracers/bullettracerosiem.vpcf",
         "particles/letaryat_tracers/bullet_tracer_electricradius.vpcf",
     ];
     public int modelToUse = 0;

@@ -9,9 +9,11 @@ namespace CS2_CustomTrailAndTracers.Utils
     {
         private readonly CS2_CustomTrailAndTracers _plugin = plugin;
 
-        //Thanks K4ryuu https://discord.com/channels/1160907911501991946/1285282792619507815/1342485330934108221
-        public static MemoryFunctionWithReturn<CParticleSystem, int, Vector, bool> SetControlPointValue { get; }
-        = new("55 48 89 E5 41 57 41 56 41 55 49 89 D5 31 D2 41 54 41 89 F4");
+        /*
+        Leaving it here since it may be helpful for someone but I think that better way to use control points is using AcceptInput instead of looking for signature. 
+        Thanks K4ryuu https://discord.com/channels/1160907911501991946/1285282792619507815/1342485330934108221
+        */
+        //public static MemoryFunctionWithReturn<CParticleSystem, int, Vector, bool> SetControlPointValue { get; } = new("55 48 89 E5 41 57 41 56 41 55 49 89 D5 31 D2 41 54 41 89 F4");
 
         public void CreatePathTrail(Vector start, CCSPlayerController player)
         {
@@ -53,10 +55,17 @@ namespace CS2_CustomTrailAndTracers.Utils
             particle.EffectName = _plugin.tracerParticles[_plugin.tracerToUse];
             particle.Teleport(start);
             particle.LifeState = 5;
-            
-            SetControlPointValue.Invoke(particle, 4, new Vector(0, 5, 0));
-            SetControlPointValue.Invoke(particle, 5, start);
-            SetControlPointValue.Invoke(particle, 6, endPos);
+
+            //SetControlPointValue.Invoke(particle, 4, new Vector(0, 5, 0));
+            //SetControlPointValue.Invoke(particle, 5, start);
+            //SetControlPointValue.Invoke(particle, 6, endPos);
+
+            /* Thanks to !Nocky: https://discord.com/channels/1160907911501991946/1160925208203493468/1414711323379372113              */
+
+            particle.AcceptInput("SetControlPoint", value: $"4: 0 5 0");
+            particle.AcceptInput("SetControlPoint", value: $"5: {start.X} {start.Y} {start.Z}");
+            particle.AcceptInput("SetControlPoint", value: $"6: {endPos.X} {endPos.Y} {endPos.Z}");
+
 
             particle.TintCP = 1;
             particle.Tint = _plugin.TrailColor;
